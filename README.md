@@ -1,6 +1,8 @@
 # openbao-dev-platform
 
-Demo OpenBao platform for local DevOps workflows.
+Self-hosted OpenBao lab environment for local DevOps and security workflows.
+
+This repository provides a minimal but structured OpenBao setup for local experimentation, reproducible lab usage, and portfolio documentation.
 
 The project currently provides a simple, readable OpenBao setup based on Docker Compose:
 
