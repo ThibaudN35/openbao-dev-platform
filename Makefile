@@ -53,8 +53,12 @@ unseal:
 	docker exec -it $(CONTAINER) bao operator unseal $(OPENBAO_UNSEAL_KEY_3)
 
 login:
-	@echo "Use this command to authenticate with the root token:"
-	@echo "export BAO_ADDR=$(OPENBAO_ADDR) && bao login $(OPENBAO_ROOT_TOKEN)"
+	@test -n "$(OPENBAO_USER_TOKEN)" || (echo "OPENBAO_USER_TOKEN is not set in .env" && exit 1)
+	docker exec -it $(CONTAINER) sh -lc 'export BAO_ADDR=$(OPENBAO_ADDR); bao login $(OPENBAO_USER_TOKEN); exec sh'
+
+login-root:
+	@test -n "$(OPENBAO_ROOT_TOKEN)" || (echo "OPENBAO_ROOT_TOKEN is not set in .env" && exit 1)
+	docker exec -it $(CONTAINER) sh -lc 'export BAO_ADDR=$(OPENBAO_ADDR); bao login $(OPENBAO_ROOT_TOKEN); exec sh'
 
 debug-env:
 	@echo "OPENBAO_ADDR=$(OPENBAO_ADDR)"
