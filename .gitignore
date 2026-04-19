@@ -1,1 +1,11 @@
+# local env files
 .env
+.env.*
+
+# vscode
+.vscode/
+
+# volumes (data runtime)
+volumes/*
+!volumes/.gitkeep
+!volumes/openbao-dev-platform/.gitkeep

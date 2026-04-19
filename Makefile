@@ -55,3 +55,9 @@ unseal:
 login:
 	@echo "Use this command to authenticate with the root token:"
 	@echo "export BAO_ADDR=$(OPENBAO_ADDR) && bao login $(OPENBAO_ROOT_TOKEN)"
+
+debug-env:
+	@echo "OPENBAO_ADDR=$(OPENBAO_ADDR)"
+	@echo "OPENBAO_CONTAINER_NAME=$(OPENBAO_CONTAINER_NAME)"
+	@echo "OPENBAO_ROOT_TOKEN=$(OPENBAO_ROOT_TOKEN)"
+	@echo "OPENBAO_UNSEAL_KEY_1=$(OPENBAO_UNSEAL_KEY_1)"
