@@ -79,10 +79,16 @@ Check OpenBao status:
 make status
 ```
 
-Print the login command using the root token stored in `.env`:
+Print the login command using the user token stored in `.env`:
 
 ```sh
 make login
+```
+
+Print the login command using the root token stored in `.env`:
+
+```sh
+make login-root
 ```
 
 Stop the environment:
